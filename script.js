@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const mainDiv = document.querySelector(".main");
 
     newDivElement.classList.add("blog-post");
-    newDivElement.classList.add("red");
+    newDivElement.classList.add("purple");
 
     const h2Element = document.createElement('h1');
     const pElememt = document.createElement("p");
@@ -87,16 +87,57 @@ document.addEventListener("DOMContentLoaded", function (event) {
     newDivElement.appendChild(h2Element);
     newDivElement.appendChild(pElememt);
 
-
-
-
-
     // Part 8
+    /* Query select the #quote-title ID element and add a click event handler. That event handler should use the function randomQuote whenever #quote-title is clicked.
+    */
+    const randomQuoteElement = document.getElementById('quote-title');
+    randomQuoteElement.addEventListener('click', (evt) => {
+        randomQuote()
+    })
 
+    /*Part 9
+    Select all .blog-post class elements. Iterate through the list of .blog-post class elements and apply two event handlers to each node. The first event handler should be listening for mouseout events while the second handler should be listening for mouseenter events.
+    
+    The mouseout handler should toggle the class .purple
+    The mouseenter handler should toggle the class .red
+    */
+    const blogPostElement = document.querySelectorAll(".blog-post");
+    blogPostElement.forEach((item) => {
+        item.addEventListener('mouseout', (evt) => {
+            item.classList.remove('red');
+            item.classList.add('purple');
+        })
+        item.addEventListener('mouseenter', (evt) => {
+            item.classList.remove('purple');// turn off purppe
+            item.classList.remove('red');//turn on red
+        })
+    })
+    const blogPostEl = document.querySelectorAll(".blog-post");
+    console.log(blogPostEl)
+    // for(let blogPost of blogPostEl) {
+    //   blogPost.addEventListener ('mouseout', (evt) => {
+    //     blogPost.classList.toggle("red")
+    //     blogPost.classList.toggle("purple")
+    //   })
+    //   blogPost.addEventListener ('mouseenter', (evt) => {
+    //     blogPost.classList.toggle("purple") // 
+    //     blogPost.classList.toggle("red") // 
+    //   })
+    // }
 
-    // Part 9
-
-
-
+    blogPostEl.forEach((item) => {
+        item.addEventListener('mouseout', (evt) => {
+            item.classList.remove("red")
+            item.classList.add("purple")
+        })
+        item.addEventListener('mouseenter', (evt) => {
+            item.classList.remove("purple") // turn off purple (removes)
+            item.classList.add("red") // turn on red
+        })
+    })
 
 });
+
+
+
+
