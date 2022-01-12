@@ -57,11 +57,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const pastRace = document.getElementById('past-races');
     pastRace.removeChild(pastRace.children[3]);
 
+    //Creating New DOM Elements
+    /*
+    Part 6
+    Let's add to DOM's Past Races list. Create a new <li> element, 
+    change the new <li> text to the name of a city, and append it to the Past Races list.
+    */
+    const newListRace = document.createElement('li');
+    newListRace.textContent = "Saigon"
+    pastRace.appendChild(newListRace);
 
-    // Part 6
+    /*
+    Part 7
+    Create a new .blog-post corresponding to the new city added in Part 6. You will have to create a new <div> with class of .blog-post, a new <h2> with text, and a new <p> with some text. Think about what order you want to create the elements, and what order you want to append them in.
+    */
+    const newDivElement = document.createElement("div");
+    const mainDiv = document.querySelector(".main");
+
+    newDivElement.classList.add("blog-post");
+    newDivElement.classList.add("red");
+
+    const h2Element = document.createElement('h1');
+    const pElememt = document.createElement("p");
+
+    h2Element.textContent = "Saigon";
+    pElememt.textContent = "Sub-marine aircraft 2000 Feet deep under water";
+
+    mainDiv.appendChild(newDivElement);//parent appenchChild
+    newDivElement.appendChild(h2Element);
+    newDivElement.appendChild(pElememt);
 
 
-    // Part 7
+
 
 
     // Part 8
