@@ -101,29 +101,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     The mouseout handler should toggle the class .purple
     The mouseenter handler should toggle the class .red
     */
-    const blogPostElement = document.querySelectorAll(".blog-post");
-    blogPostElement.forEach((item) => {
-        item.addEventListener('mouseout', (evt) => {
-            item.classList.remove('red');
-            item.classList.add('purple');
-        })
-        item.addEventListener('mouseenter', (evt) => {
-            item.classList.remove('purple');// turn off purppe
-            item.classList.remove('red');//turn on red
-        })
-    })
     const blogPostEl = document.querySelectorAll(".blog-post");
     console.log(blogPostEl)
-    // for(let blogPost of blogPostEl) {
-    //   blogPost.addEventListener ('mouseout', (evt) => {
-    //     blogPost.classList.toggle("red")
-    //     blogPost.classList.toggle("purple")
-    //   })
-    //   blogPost.addEventListener ('mouseenter', (evt) => {
-    //     blogPost.classList.toggle("purple") // 
-    //     blogPost.classList.toggle("red") // 
-    //   })
-    // }
 
     blogPostEl.forEach((item) => {
         item.addEventListener('mouseout', (evt) => {
@@ -131,8 +110,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             item.classList.add("purple")
         })
         item.addEventListener('mouseenter', (evt) => {
-            item.classList.remove("purple") // turn off purple (removes)
+            item.classList.remove("purple") // turn off purple 
             item.classList.add("red") // turn on red
+
         })
     })
 
